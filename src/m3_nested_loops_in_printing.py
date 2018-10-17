@@ -12,8 +12,8 @@ def main():
     run_test_rectangle_of_stars()
     run_test_triangle_of_stars()
     run_test_decreasing_exclamation_marks()
-    # run_test_alternating_brackets()
-    # run_test_triangle_same_number_in_each_row()
+    run_test_alternating_brackets()
+    run_test_triangle_same_number_in_each_row()
     # run_test_triangle_all_numbers_in_each_row()
 
 
@@ -158,7 +158,7 @@ def decreasing_exclamation_marks(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -204,7 +204,7 @@ def alternating_brackets(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -212,6 +212,13 @@ def alternating_brackets(m, n):
     #   in this or the other problems in this module, as doing so
     #   would defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+    for k in range(m, n - 1, -1):
+        for i in range(k):
+            if i % 2 == 0:
+                print("[", end="")
+            else:
+                print("]", end="")
+        print()
 
 
 def run_test_triangle_same_number_in_each_row():
