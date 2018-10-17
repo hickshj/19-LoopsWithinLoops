@@ -146,6 +146,9 @@ def draw_wall_on_right(rectangle, n, window):
     # TODO: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    halfw = rectangle.get_width() / 2
+    halfh = rectangle.get_height() / 2
+
 
 
 # ----------------------------------------------------------------------
