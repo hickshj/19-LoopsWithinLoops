@@ -11,7 +11,7 @@ def main():
     """ Calls the other functions to test them. """
     run_test_multiply_numbers()
     run_test_sum_numbers()
-    # run_test_print_characters()
+    run_test_print_characters()
     # run_test_print_characters_slanted()
 
 
@@ -136,7 +136,7 @@ def multiply_numbers(sequence_of_lists):
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # Done: 3. Implement this TEST function.
     #   It TESTS the  sum_numbers  function defined below.
     #   Include at least **   3   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -157,6 +157,11 @@ def run_test_sum_numbers():
 
     # TO DO 3 (continued): Add your ADDITIONAL test(s) here:
 
+    # Test 3:
+    expected = 13
+    answer = sum_numbers(([(-20, 15, 5), (8, 10), (-12007, 12002)]))
+    print('Expected and actual are:', expected, answer)
+
 
 def sum_numbers(seq_seq):
     """
@@ -169,9 +174,14 @@ def sum_numbers(seq_seq):
                     and each item in the subsequences is a number.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    total = 0
+    for k in range(len(seq_seq)):
+        for i in range(len(seq_seq[k])):
+            total = total + seq_seq[k][i]
+    return total
 
 
 def run_test_print_characters():
