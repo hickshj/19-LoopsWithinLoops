@@ -80,9 +80,31 @@ def draw_L(window, circle, r, c):
     and m and n are small, positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+    orig_x = circle.center.x
+    x1 = circle.center.x
+    y1 = circle.center.y
+    ir = circle.radius * 2
+    fill_color = circle.fill_color
+    for k in range(r + 3):
+        if k < r:
+            for i in range(3):
+                circle = rg.Circle(rg.Point(x1, y1), ir / 2)
+                circle.fill_color = fill_color
+                circle.attach_to(window)
+                window.render(0.1)
+                x1 = x1 + ir
+        else:
+            for i in range(3 + c):
+                circle = rg.Circle(rg.Point(x1, y1), ir / 2)
+                circle.fill_color = fill_color
+                circle.attach_to(window)
+                window.render(0.1)
+                x1 = x1 + ir
+        x1 = orig_x
+        y1 = y1 + ir
 
 
 def run_test_draw_wall_on_right():
