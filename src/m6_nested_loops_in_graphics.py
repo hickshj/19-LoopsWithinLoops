@@ -148,7 +148,22 @@ def draw_wall_on_right(rectangle, n, window):
     # ------------------------------------------------------------------
     halfw = rectangle.get_width() / 2
     halfh = rectangle.get_height() / 2
-
+    width = rectangle.get_width()
+    height = rectangle.get_height()
+    originalx = rectangle.get_center().x
+    originaly = rectangle.get_center().y
+    mutex = originalx
+    mutey = originaly
+    for k in range(n):
+        for i in range(k + 1):
+            tl = rg.Point(mutex - halfw, mutey - halfh)
+            br = rg.Point(mutex + halfw, mutey + halfh)
+            mutex = mutex - width
+            rect = rg.Rectangle(tl, br)
+            rect.attach_to(window)
+            window.render(.1)
+        mutey = mutey + height
+        mutex = originalx
 
 
 # ----------------------------------------------------------------------
